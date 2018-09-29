@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     double sum_best = 0;
     long mask_best = 0x0;
-    for (long mask = 0; mask < 0x1<<(n); mask++) {
+    for (long mask = 0; mask < 0x1<<n; mask++) {
         double sum = 0;
         for (int i = 0; i < n; i++)
             if ((mask >> i) & 0x1)
