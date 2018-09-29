@@ -17,7 +17,10 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Cannot open '%s': %s\n", filename, strerror(errno));
         return errno;
     }
-    fscanf(file, "%lf", &limit);
+    if (fscanf(file, "%lf", &limit) == 0) {
+        fprintf(stderr, "Cannot read '%s': invalid format\n", filename);
+        return -1;
+    }
     while (fscanf(file, "%lf", &items[n]) > 0)
         n++;
     fclose(file);
