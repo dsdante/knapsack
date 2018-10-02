@@ -1,6 +1,6 @@
 ## Knapsack problem
 
-The [knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem) is to find the set of `items` with the maximum sum below `limit`.
+The [knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem) is to find the set of non-negative `items` with the maximum sum below `limit`.
 
 The goal is to modify the naive solution to make it solve the problem with N=30 in a minimum time.
 
