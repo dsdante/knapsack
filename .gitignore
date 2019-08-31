@@ -1,4 +1,13 @@
-/target
-**/*.rs.bk
+#c
 *debug
 *release
+.idea
+
+#rust
+/target
+**/*.rs.bk
+
+#dotnet
+bin
+obj
+packages

@@ -1,4 +1,0 @@
-/home/dante/works/knapsack-dotnet/knapsack-csharp/bin/Release/input
-/home/dante/works/knapsack-dotnet/knapsack-csharp/bin/Release/knapsack-csharp.exe
-/home/dante/works/knapsack-dotnet/knapsack-csharp/obj/x86/Release/knapsack-csharp.csproj.CoreCompileInputs.cache
-/home/dante/works/knapsack-dotnet/knapsack-csharp/obj/x86/Release/knapsack-csharp.exe
