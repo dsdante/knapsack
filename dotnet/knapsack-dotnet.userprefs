@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{441DFAC5-E791-4B68-B2BE-96108369931B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="knapsack-fsharp/Program.fs">
+    <Files>
+      <File FileName="knapsack-csharp/Program.cs" Line="47" Column="28" />
+      <File FileName="knapsack-fsharp/Program.fs" Line="42" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.knapsack-csharp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.knapsack-fsharp PreferredExecutionTarget="MonoDevelop.Default" />
+  <DisabledProjects>
+    <String>knapsack-fsharp/knapsack-fsharp.fsproj</String>
+  </DisabledProjects>
+</Properties>

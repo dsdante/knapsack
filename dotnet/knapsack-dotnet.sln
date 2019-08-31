@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack-csharp", "knapsack-csharp\knapsack-csharp.csproj", "{E93A2D37-F8A9-499C-97E5-53506A8076F2}"
+EndProject
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "knapsack-fsharp", "knapsack-fsharp\knapsack-fsharp.fsproj", "{441DFAC5-E791-4B68-B2BE-96108369931B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E93A2D37-F8A9-499C-97E5-53506A8076F2}.Debug|x86.ActiveCfg = Debug|x86
+		{E93A2D37-F8A9-499C-97E5-53506A8076F2}.Debug|x86.Build.0 = Debug|x86
+		{E93A2D37-F8A9-499C-97E5-53506A8076F2}.Release|x86.ActiveCfg = Release|x86
+		{E93A2D37-F8A9-499C-97E5-53506A8076F2}.Release|x86.Build.0 = Release|x86
+		{441DFAC5-E791-4B68-B2BE-96108369931B}.Debug|x86.ActiveCfg = Debug|x86
+		{441DFAC5-E791-4B68-B2BE-96108369931B}.Debug|x86.Build.0 = Debug|x86
+		{441DFAC5-E791-4B68-B2BE-96108369931B}.Release|x86.ActiveCfg = Release|x86
+		{441DFAC5-E791-4B68-B2BE-96108369931B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+[package]
+name = "knapsack-rust"
+version = "0.1.0"
+authors = ["Dante"]
+edition = "2018"
+
+[dependencies]
+crossbeam = "0.7.2"
+num_cpus = "0.2.0"

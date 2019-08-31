@@ -1,0 +1,6 @@
+/home/dante/works/knapsack-dotnet/knapsack-csharp/bin/Debug/knapsack-csharp.exe
+/home/dante/works/knapsack-dotnet/knapsack-csharp/bin/Debug/knapsack-csharp.pdb
+/home/dante/works/knapsack-dotnet/knapsack-csharp/obj/x86/Debug/knapsack-csharp.csproj.CoreCompileInputs.cache
+/home/dante/works/knapsack-dotnet/knapsack-csharp/obj/x86/Debug/knapsack-csharp.exe
+/home/dante/works/knapsack-dotnet/knapsack-csharp/obj/x86/Debug/knapsack-csharp.pdb
+/home/dante/works/knapsack-dotnet/knapsack-csharp/bin/Debug/input

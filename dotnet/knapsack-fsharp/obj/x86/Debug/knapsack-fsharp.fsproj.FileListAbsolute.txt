@@ -1,0 +1,10 @@
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/bin/Debug/knapsack-fsharp.exe
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/bin/Debug/knapsack-fsharp.exe.mdb
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/bin/Debug/FSharp.Core.dll
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/bin/Debug/System.ValueTuple.dll
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/bin/Debug/FSharp.Core.xml
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/obj/x86/Debug/knapsack-fsharp.fsprojResolveAssemblyReference.cache
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/obj/x86/Debug/knapsack-fsharp.fsproj.CoreCompileInputs.cache
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/obj/x86/Debug/knapsack-fsharp.exe
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/obj/x86/Debug/knapsack-fsharp.exe.mdb
+/home/dante/works/knapsack-dotnet/knapsack-fsharp/bin/Debug/input
