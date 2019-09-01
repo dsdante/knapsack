@@ -48,7 +48,7 @@ knapsack_recursive:
     comisd  _limit, sum_b       # if (sum_b <= limit)
     jbe     below_limit         #     no pruning
     sub     depth, _n           # else
-    rol     _n, mask            #     mask <<= n - depth;
+    shl     _n, mask            #     mask <<= n - depth;
     add     depth, _n
     ret                         # return;
 
