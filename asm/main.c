@@ -65,8 +65,8 @@ int main(int argc, char* argv[])
 {
     if (argc >= 2)
         filename = argv[1];
-    FILE* file = fopen(filename, "r");
     printf("Running '%s'...\n", filename);
+    FILE* file = fopen(filename, "r");
     if (file == NULL) {
         fprintf(stderr, "Cannot open '%s': %s\n", filename, strerror(errno));
         return errno;
@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
     {
         // Keeping bigger items at the end allows pruning at the later stages,
         // thus balancing the recursion tree
-        qsort(items, n, sizeof(double), compare);
+        qsort(items, n, sizeof(items[0]), compare);
 
         #ifdef PARALLELIZE
         long cores = sysconf(_SC_NPROCESSORS_ONLN);
