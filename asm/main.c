@@ -85,21 +85,21 @@ int main(int argc, char* argv[])
 
     if (n > 0)
     {
-		// Keeping bigger items at the end allows pruning at the later stages,
-		// thus balancing the recursion tree
-		qsort(items, n, sizeof(double), compare);
+        // Keeping bigger items at the end allows pruning at the later stages,
+        // thus balancing the recursion tree
+        qsort(items, n, sizeof(double), compare);
 
-		#ifdef PARALLELIZE
-		long cores = sysconf(_SC_NPROCESSORS_ONLN);
-		if (cores > 1) // branching recursion depth = ceil(log2(cores))
-			thread_depth = 8 * sizeof(cores) - __builtin_clzl(cores-1);
-		#pragma omp parallel default(none) shared(sum, mask)
-		#pragma omp single
-		sum = knapsack_parallel(0, 0.0, &mask);
-		#else
-		#warning Single-threaded
-		sum = knapsack(0, 0.0, &mask);
-		#endif
+        #ifdef PARALLELIZE
+        long cores = sysconf(_SC_NPROCESSORS_ONLN);
+        if (cores > 1) // branching recursion depth = ceil(log2(cores))
+            thread_depth = 8 * sizeof(cores) - __builtin_clzl(cores-1);
+        #pragma omp parallel default(none) shared(sum, mask)
+        #pragma omp single
+        sum = knapsack_parallel(0, 0.0, &mask);
+        #else
+        #warning Single-threaded
+        sum = knapsack(0, 0.0, &mask);
+        #endif
     }
 
     printf("Sum: %.9f / %g\n", sum, limit);
