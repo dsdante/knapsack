@@ -51,10 +51,10 @@ below_limit:
     inc     depth               # depth++;
     shl     $1, mask            # mask <<= 1;
     mov     mask, mask_b        # mask_b = mask | 0x1;
-    or      $0x1, mask_b
+    inc     mask_b
 
     cmp     _n, depth           # if (depth == n)
-    je      select_better       #     select which one is better
+    je      select_better       #     select the better one
 
     sub     $16, %rsp
     movsd   sum_b, 8(%rsp)      # push sum_b
