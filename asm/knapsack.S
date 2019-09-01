@@ -21,7 +21,12 @@
 #define mask_b      %rdx
 
 
-/* __sysv_abi double knapsack(u_int8_t depth, double sum, u_int64_t* mask); */
+# Knapsack calculation routine
+#   depth: current recursion depth, i.e. the number of the considered items
+#   sum: the sum of the taken items among considered
+#   mask: the bit mask of the taken items
+#   returns the best sum for this branch of recursion
+# __sysv_abi double knapsack(u_int8_t depth, double sum, u_int64_t* mask)
 .globl knapsack
 knapsack:
     push    %rbx                # Prologue

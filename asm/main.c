@@ -16,7 +16,7 @@ extern __attribute__((__sysv_abi__)) double knapsack(u_int8_t depth, double sum,
 #ifdef PARALLELIZE
 u_int8_t thread_depth = 0;  // Threading recursion depth; threads = 2^thread_depth
 
-// Multi-threading version of the routine
+// Multi-threading version of the knapsack calculation routine
 //   depth: current recursion depth, i.e. the number of the considered items
 //   sum: the sum of the taken items among considered
 //   mask: the bit mask of the taken items
