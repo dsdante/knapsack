@@ -55,8 +55,7 @@ knapsack_recursive:
 below_limit:
     inc     depth               # depth++;
     shl     $1, mask            # mask <<= 1;
-    mov     mask, mask_b        # mask_b = mask | 0x1;
-    inc     mask_b
+    lea     1(mask), mask_b     # mask_b = mask | 0x1;
 
     cmp     _n, depth           # if (depth == n)
     je      select_better       #     select the better one
