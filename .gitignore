@@ -1,14 +1,24 @@
-#c
-*debug
-*release
+# C
+*debug*
+*release*
 .idea
 
-#rust
+# Eclipse CDT
+Debug
+Release
+.cproject
+.metadata
+.project
+.settings
+*/.gitignore
+
+# rust
 /target
 **/*.rs.bk
 
-#dotnet
+# C#
 bin
 obj
 packages
 *.userprefs
+/.metadata/
