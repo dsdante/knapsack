@@ -65,12 +65,12 @@ int main(int argc, char* argv[])
 {
     if (argc >= 2)
         filename = argv[1];
-    printf("Running '%s'...\n", filename);
     FILE* file = fopen(filename, "r");
     if (file == NULL) {
         fprintf(stderr, "Cannot open '%s': %s\n", filename, strerror(errno));
         return errno;
     }
+    printf("Running '%s'...\n", filename);
     if (fscanf(file, "%lf", &limit) == 0) {
         fprintf(stderr, "Cannot read '%s': invalid format\n", filename);
         fclose(file);
@@ -103,7 +103,7 @@ int main(int argc, char* argv[])
     }
 
     printf("Sum: %.9f / %g\n", sum, limit);
-    printf("Used items: %d / %d\n", __builtin_popcountl(mask), n);
+    printf("Used items: %d / %u\n", __builtin_popcountl(mask), n);
     while (n--) {
         if (mask & 0x1U)
             printf("%.9f\n", items[n]);
