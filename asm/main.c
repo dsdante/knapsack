@@ -26,7 +26,7 @@ double knapsack_parallel(u_int8_t depth, double sum, u_int64_t* mask)
     if (depth == n)
         return sum;
 
-    if (depth == thread_depth)  // No more thread spawning
+    if (depth == thread_depth)  // No more thread spawning.
         return knapsack(depth, sum, mask);
 
     double sum_b = sum + items[depth];
@@ -91,7 +91,7 @@ int main(int argc, char* argv[])
 
         #ifdef PARALLELIZE
         long cores = sysconf(_SC_NPROCESSORS_ONLN);
-        if (cores > 1) // branching recursion depth = ceil(log2(cores))
+        if (cores > 1)  // Branching recursion depth = ceil(log2(cores))
             thread_depth = 8 * sizeof(cores) - __builtin_clzl(cores-1);
         #pragma omp parallel default(none) shared(sum, mask)
         #pragma omp single
