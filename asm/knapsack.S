@@ -61,16 +61,16 @@ below_limit:
     je      select_better       #     select the better one
 
     sub     $32, %rsp
-    mov     mask_b, (%rsp)      # push mask_b
-    movsd   sum_b, 8(%rsp)      # push sum_b
+    mov     mask_b, (%rsp)      # push b
+    movsd   sum_b, 8(%rsp)
     call    knapsack_recursive  # a = knapsack(depth, sum, mask);  // Try without items[depth]
-    mov     mask, 16(%rsp)      # swap a and b; we don't care for the order
+    mov     mask, 16(%rsp)      # swap a and b in the stack; we don't care for the order
     movsd   sum, 24(%rsp)
     mov     (%rsp), mask
     movsd   8(%rsp), sum
-    call    knapsack_recursive  # b = routine(depth, sum, mask);  // try with items[depth]
-    mov     16(%rsp), mask_b    # pop mask_b
-    movsd   24(%rsp), sum_b     # pop sum_b
+    call    knapsack_recursive  # b = routine(depth, sum_b, mask_b);  // Try with items[depth]
+    mov     16(%rsp), mask_b    # pop a as b
+    movsd   24(%rsp), sum_b
     add     $32, %rsp
 
 select_better:
