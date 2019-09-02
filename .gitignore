@@ -15,6 +15,7 @@ Release
 # rust
 /target
 **/*.rs.bk
+.rustc_info.json
 
 # C#
 bin
