@@ -6,11 +6,17 @@ The goal is to modify the naive solution to make it solve the problem with N=30 
 
 Input file format:  
 `double limit`  
+`double item[0]`  
 `double item[1]`  
-`double item[2]`  
 `...`  
-`double item[N]`
+`double item[N-1]`
 
 knapsack-gen.c: input data generator  
-knapsack-naive.c: a naive implementation of the solution  
-run-all.sh: run all versions with performance measurement  
+knapsack-naive.c: a naive implementation  
+run-all.sh: run all versions with performance measurement
+
+A typical ratio of running time is:  
+assembly = 1  
+C = 1.7  
+Rust = 1.8  
+C# = 3
