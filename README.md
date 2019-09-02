@@ -12,5 +12,5 @@ Input file format:
 `double item[N]`
 
 knapsack-gen.c: input data generator  
-knapsack-naive.c: a naive implementation of the solution
-run-all.sh: run all versions with performance measurement
+knapsack-naive.c: a naive implementation of the solution  
+run-all.sh: run all versions with performance measurement  
