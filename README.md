@@ -15,7 +15,9 @@ knapsack-gen.c: input data generator
 knapsack-naive.c: a naive implementation  
 run-all.sh: run all versions with performance measurement
 
-A typical ratio of running time is:  
+Requirements: CMake, GCC, Rust, Mono
+
+A typical ratio of running time:  
 assembly = 1  
 C = 1.7  
 Rust = 1.8  
