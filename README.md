@@ -20,5 +20,5 @@ Requirements: CMake, GCC, Rust, Mono
 A typical ratio of running time:  
 assembly = 1  
 C = 2.0  
-Rust = 2.2  
+Rust = 2.1  
 C# = 3.5

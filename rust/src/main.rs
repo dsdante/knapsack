@@ -5,30 +5,32 @@ extern crate num_cpus;
 const DEFAULT_FILENAME: &str = "input"; // Can be overridden with an argument.
 const PARALLELIZE: bool = true;
 
-/// Recursive knapsack calculation routine
-///   depth: the number of the items considered so far (the current recursion depth)
-///   sum: the sum of the taken items among considered
-///   mask: the bit mask of the taken items
-fn knapsack(limit: f64, items: &Vec<f64>, depth: usize, sum: &mut f64, mask: &mut usize) {
+// Knapsack calculation
+//   depth: current recursion depth, i.e. the number of the considered items
+//   sum: the sum of the taken items among considered
+//   mask: bit mask of the taken items
+//   returns the best sum for this branch of recursion
+fn knapsack(limit: f64, items: &Vec<f64>, depth: usize, sum: f64, mask: &mut usize) -> f64 {
     if depth == items.len() {
-        return;
+        return sum;
     }
 
-    let mut sum_b = *sum + items[depth];
+    let sum_b = sum + items[depth];
     if sum_b > limit {
         // Recursion pruning
         *mask <<= items.len() - depth;
-        return;
+        return sum;
     }
     *mask <<= 1;
     let mut mask_b = *mask | 0x1;
 
-    knapsack(limit, items, depth + 1, sum, mask);
-    knapsack(limit, items, depth + 1, &mut sum_b, &mut mask_b);
-    if sum_b > *sum {
-        *sum = sum_b;
+    let sum = knapsack(limit, items, depth + 1, sum, mask);
+    let sum_b = knapsack(limit, items, depth + 1, sum_b, &mut mask_b);
+    if sum_b > sum {
         *mask = mask_b;
+        return sum_b;
     }
+    return sum;
 }
 
 /// Parallel version of the knapsack calculation routine
@@ -49,7 +51,7 @@ fn knapsack_parallel(
     }
     if depth == spawn_depth {
         // No more branching.
-        knapsack(limit, items, depth, sum, mask);
+        *sum = knapsack(limit, items, depth, *sum, mask);
         return;
     }
 
@@ -77,8 +79,8 @@ fn knapsack_parallel(
     .expect("Thread error");
 
     if sum_b > *sum {
-        *sum = sum_b;
         *mask = mask_b;
+        *sum = sum_b;
     }
 }
 
@@ -115,15 +117,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // thus balancing the recursion tree
     items.sort_unstable_by(|x, y| x.partial_cmp(y).unwrap()); // No NaNs by now.
 
-    let mut sum = 0.0;
-    let mut mask = 0x0;
     let spawn_depth = match PARALLELIZE {
         false => 0,
         true => num_cpus::get().next_power_of_two().trailing_zeros() as usize,
     };
+    let mut mask = 0x0;
+    let mut sum = 0.0;
     knapsack_parallel(limit, &items, 0, spawn_depth, &mut sum, &mut mask);
 
-    println!("Sum: {} / {}", sum, limit);
+    println!("Sum: {:.9} / {}", sum, limit);
     println!("Used items: {} / {}", mask.count_ones(), items.len());
     for i in items.iter().rev() {
         if mask & 0x1 != 0 {
