@@ -68,7 +68,7 @@ below_limit:
     movsd   sum, 24(%rsp)
     mov     (%rsp), mask
     movsd   8(%rsp), sum
-    call    knapsack_recursive  # b = routine(depth, sum_b, mask_b);  // Try with items[depth]
+    call    knapsack_recursive  # a = routine(depth, sum_b, mask_b);  // Try with items[depth]
     mov     16(%rsp), mask_b    # pop a as b
     movsd   24(%rsp), sum_b
     add     $32, %rsp
