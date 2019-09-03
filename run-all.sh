@@ -19,7 +19,7 @@ pushd $RUST_DIR
 cargo build --release
 popd
 
-CSHARP_DIR=dotnet/knapsack-csharp
+CSHARP_DIR=csharp
 pushd $CSHARP_DIR
 xbuild /p:Configuration=Release
 popd

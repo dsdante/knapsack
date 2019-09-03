@@ -94,6 +94,5 @@ class Program
                 Console.WriteLine($"{items[i]:0.000000000}");
             mask >>= 1;
         }
-        Console.WriteLine();
     }
 }
