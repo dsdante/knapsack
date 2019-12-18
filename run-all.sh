@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 ASM_DIR=asm/cmake-build-release
 mkdir -p $ASM_DIR
