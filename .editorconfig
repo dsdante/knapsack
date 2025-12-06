@@ -1,0 +1,7 @@
+﻿[*]
+charset = utf-8
+trim_trailing_whitespace = true
+
+[*.{cs,fs}]
+# https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelines
+guidelines = 120 0.1px solid gray

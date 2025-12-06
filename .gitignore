@@ -19,9 +19,7 @@ Release
 **/*.rs.bk
 .rustc_info.json
 
-# C#
+# .NET
+.vs
 bin
 obj
-packages
-*.userprefs
-/.metadata/

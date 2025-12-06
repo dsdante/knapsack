@@ -19,9 +19,8 @@ pushd $RUST_DIR
 cargo build --release
 popd
 
-CSHARP_DIR=csharp
-pushd $CSHARP_DIR
-xbuild /p:Configuration=Release
+pushd dotnet
+dotnet build --configuration Release
 popd
 
 echo
@@ -38,5 +37,8 @@ time $RUST_DIR/target/release/knapsack-rust
 
 echo
 echo ===== C# =====
-time mono $CSHARP_DIR/bin/Release/knapsack-csharp.exe
+time dotnet dotnet/KnapsackCSharp/bin/Release/net10.0/KnapsackCSharp.dll
 
+echo
+echo ===== F# =====
+time dotnet dotnet/KnapsackFSharp/bin/Release/net10.0/KnapsackFSharp.dll
